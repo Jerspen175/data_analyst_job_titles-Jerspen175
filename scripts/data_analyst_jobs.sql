@@ -27,15 +27,18 @@
 ---There are 21 postings in TN. There are 6 postings in KY. 
 
 -- 4.	How many postings in Tennessee have a star rating above 4?
-SELECT star_rating
-FROM data_analyst_jobs
-WHERE location= 'TN' AND star_rating > '4';
+-- SELECT star_rating
+-- FROM data_analyst_jobs
+-- WHERE location= 'TN' AND star_rating > '4';
 
 ---In TN there are 3 listings with a star rating above 4.
 
 
-
 -- 5.	How many postings in the dataset have a review count between 500 and 1000?
+SELECT review_count
+FROM data_analyst_jobs
+WHERE review_count BETWEEN '500' AND '1000';
+---There are 151 listings that have a review count between 500 and 1000.
 
 -- 6.	Show the average star rating for companies in each state. The output should show the state as `state` and the average rating for the state as `avg_rating`. Which state shows the highest average rating?
 
