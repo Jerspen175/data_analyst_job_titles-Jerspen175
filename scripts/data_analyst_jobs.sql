@@ -1,6 +1,6 @@
 -- The dataset for this exercise has been derived from the `Indeed Data Scientist/Analyst/Engineer` [dataset](https://www.kaggle.com/elroyggj/indeed-dataset-data-scientistanalystengineer) on kaggle.com. 
-SELECT COUNT(*)
-FROM data_analyst_jobs;
+-- SELECT COUNT(*)
+-- FROM data_analyst_jobs;
 
 --
 -- Before beginning to answer questions, take some time to review the data dictionary and familiarize yourself with the data that is contained in each column.
@@ -14,15 +14,18 @@ FROM data_analyst_jobs;
 --- 1793 rows.
 
 -- 2.	Write a query to look at just the first 10 rows. What company is associated with the job posting on the 10th row?
-SELECT *
-FROM data_analyst_jobs
-LIMIT 10;
+-- SELECT *
+-- FROM data_analyst_jobs
+-- LIMIT 10;
 ---ExxonMobil
 
 -- 3.	How many postings are in Tennessee? How many are there in either Tennessee or Kentucky?
--- SELECT location
--- FROM data_analyst_jobs
--- WHERE "location"= "TN" OR "KY";
+SELECT *
+FROM data_analyst_jobs
+WHERE location='TN' OR location='KY';
+
+---There are 21 postings in TN. There are 6 postings in KY. 
+
 -- 4.	How many postings in Tennessee have a star rating above 4?
 
 -- 5.	How many postings in the dataset have a review count between 500 and 1000?
