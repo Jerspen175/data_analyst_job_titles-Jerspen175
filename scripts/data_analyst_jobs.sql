@@ -73,13 +73,17 @@
 ---Kaiser Permanete has the highest star rating in the data set. The rating is 4.2(4.1999).
 
 -- 11.	Find all the job titles that contain the word ‘Analyst’. How many different job titles are there? 
-SELECT DISTINCT(title)
-FROM data_analyst_jobs
-WHERE title LIKE '%Analyst%';
+-- SELECT DISTINCT(title)
+-- FROM data_analyst_jobs
+-- WHERE title LIKE '%Analyst%';
 ---There are 1636 job titles that contain 'Analyst'. There are only 754 when you remove titles that repeat themselves.
 
 -- 12.	How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
-
+SELECT DISTINCT(title)
+FROM data_analyst_jobs
+WHERE title NOT LIKE '%Analyst%'
+      AND title NOT LIKE '%Analytics%';
+---The words 'Analyst' and 'Analytics' are all capitalized.
 -- **BONUS:**
 -- You want to understand which jobs requiring SQL are hard to fill. Find the number of jobs by industry (domain) that require SQL and have been posted longer than 3 weeks. 
 --  - Disregard any postings where the domain is NULL. 
