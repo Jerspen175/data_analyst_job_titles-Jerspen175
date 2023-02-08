@@ -79,10 +79,10 @@
 ---There are 1636 job titles that contain 'Analyst'. There are only 754 when you remove titles that repeat themselves.
 
 -- 12.	How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
-SELECT DISTINCT(title)
-FROM data_analyst_jobs
-WHERE title NOT LIKE '%Analyst%'
-      AND title NOT LIKE '%Analytics%';
+-- SELECT DISTINCT(title)
+-- FROM data_analyst_jobs
+-- WHERE title NOT LIKE '%Analyst%'
+--       AND title NOT LIKE '%Analytics%';
 ---The words 'Analyst' and 'Analytics' are all capitalized.
 -- **BONUS:**
 -- You want to understand which jobs requiring SQL are hard to fill. Find the number of jobs by industry (domain) that require SQL and have been posted longer than 3 weeks. 
@@ -90,5 +90,10 @@ WHERE title NOT LIKE '%Analyst%'
 --  - Order your results so that the domain with the greatest number of `hard to fill` jobs is at the top. 
 --   - Which three industries are in the top 4 on this list? How many jobs have been listed for more than 3 weeks for each of the top 4?
 
+SELECT title, skill, days_since_posting, domain 
+FROM data_analyst_jobs
+WHERE skill LIKE '%SQL%' AND days_since_posting > '21' AND domain IS NOT NULL  
+ORDER BY days_since_posting DESC;
+---Consulting and Business Services, Consumer Goods and Services, Internet and Software, Computers and Electronics. 
 
 
