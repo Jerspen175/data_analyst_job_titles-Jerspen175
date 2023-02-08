@@ -58,13 +58,19 @@
 ---There are 230 unique job titles in the state CA.
 
 -- 9.	Find the name of each company and its average star rating for all companies that have more than 5000 reviews across all locations. How many companies are there with more that 5000 reviews across all locations?
-SELECT title, AVG(star_rating) AS avg_star_rating, location, review_count
-FROM data_analyst_jobs
-WHERE review_count > '5000'
-GROUP BY title, location, review_count;
+-- SELECT company , title, AVG(star_rating) AS avg_star_rating, location, review_count
+-- FROM data_analyst_jobs
+-- WHERE review_count > '5000'
+-- GROUP BY company , title, location, review_count;
 ---There are 131 companies with more than 5000 reviews across all locations.
 
 -- 10.	Add the code to order the query in #9 from highest to lowest average star rating. Which company with more than 5000 reviews across all locations in the dataset has the highest star rating? What is that rating?
+SELECT title, AVG(star_rating) AS avg_star_rating, location, review_count,company
+FROM data_analyst_jobs
+WHERE review_count > '5000'
+GROUP BY title, location, review_count, company
+ORDER BY avg_star_rating DESC;
+---Kaiser Permanete has the highest star rating in the data set. The rating is 4.2(4.1999).
 
 -- 11.	Find all the job titles that contain the word ‘Analyst’. How many different job titles are there? 
 
