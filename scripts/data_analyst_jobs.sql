@@ -20,13 +20,20 @@
 ---ExxonMobil
 
 -- 3.	How many postings are in Tennessee? How many are there in either Tennessee or Kentucky?
-SELECT *
-FROM data_analyst_jobs
-WHERE location='TN' OR location='KY';
+-- SELECT *
+-- FROM data_analyst_jobs
+-- WHERE location='TN' OR location='KY';
 
 ---There are 21 postings in TN. There are 6 postings in KY. 
 
 -- 4.	How many postings in Tennessee have a star rating above 4?
+SELECT star_rating
+FROM data_analyst_jobs
+WHERE location= 'TN' AND star_rating > '4';
+
+---In TN there are 3 listings with a star rating above 4.
+
+
 
 -- 5.	How many postings in the dataset have a review count between 500 and 1000?
 
