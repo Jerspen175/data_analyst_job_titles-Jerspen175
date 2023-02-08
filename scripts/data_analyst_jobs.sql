@@ -8,16 +8,21 @@ FROM data_analyst_jobs;
 -- #### Provide the SQL queries and answers for the following questions/tasks using the data_analyst_jobs table you have created in PostgreSQL:
 
 -- 1.	How many rows are in the data_analyst_jobs table?
-SELECT COUNT(*)
-FROM data_analyst_jobs;
+-- SELECT COUNT(*)
+-- FROM data_analyst_jobs
 
 --- 1793 rows.
 
 -- 2.	Write a query to look at just the first 10 rows. What company is associated with the job posting on the 10th row?
-
+SELECT *
+FROM data_analyst_jobs
+LIMIT 10;
+---ExxonMobil
 
 -- 3.	How many postings are in Tennessee? How many are there in either Tennessee or Kentucky?
-
+-- SELECT location
+-- FROM data_analyst_jobs
+-- WHERE "location"= "TN" OR "KY";
 -- 4.	How many postings in Tennessee have a star rating above 4?
 
 -- 5.	How many postings in the dataset have a review count between 500 and 1000?
