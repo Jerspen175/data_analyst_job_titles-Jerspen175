@@ -90,10 +90,15 @@
 --  - Order your results so that the domain with the greatest number of `hard to fill` jobs is at the top. 
 --   - Which three industries are in the top 4 on this list? How many jobs have been listed for more than 3 weeks for each of the top 4?
 
-SELECT title, skill, days_since_posting, domain 
+SELECT  domain, COUNT(skill)
 FROM data_analyst_jobs
-WHERE skill LIKE '%SQL%' AND days_since_posting > '21' AND domain IS NOT NULL  
-ORDER BY days_since_posting DESC;
----Consulting and Business Services, Consumer Goods and Services, Internet and Software, Computers and Electronics. 
+WHERE skill LIKE '%SQL%' AND days_since_posting > '21' AND domain IS NOT NULL
+GROUP BY domain
+ORDER BY COUNT(skill) DESC; 
+
+--- The top 4 industries with openings for more than 3 weeks are Internet and Software(62), Banks and Financial Services(61), Consulting and Business Services(57), and Health Care(52). 
+
+--
+
 
 
